@@ -1,18 +1,18 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import ErrorBoundary from './ErrorBoundary';
+import Calculator from './components/Calculator';
+import Home from './components/Home';
 import './App.css';
 
 function App() {
   return (
     <ErrorBoundary>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Шаблон React успешно развернут, <br />
-            Ждите обновлений от AI :)
-          </p>
-        </header>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/calculator" element={<Calculator />} />
+        </Routes>
       </div>
     </ErrorBoundary>
   );
